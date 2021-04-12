@@ -15,109 +15,134 @@
   <!--Credential Handler API Polyfill-->
   <script src="https://unpkg.com/credential-handler-polyfill@2.1.3/dist/credential-handler-polyfill.min.js"></script>
 </head>
-  <!-- Start skript von Ohm-->
 
-<body onload="document.defaultForm.in_username.focus();">
+<body onload="document.defaultForm;">
   <div class="wrapper-ohm">
-  <div class="header-ohm hidden-print img-responsive"><div class="headertext-ohm"><small>Sie sind nicht angemeldet.</small></div></div>
+  <div class="header-ohm hidden-print img-responsive"><div class="headertext-ohm"><small>Sie sind angemeldet als Veronika Sedlackova</small></div></div>
   <nav class="navbar navbar-default  navbar-ohm hidden-print" role="navigation">
+  <div class="dropdown-ohm dropdown">
+        <button class="dropdown-btn-ohm btn dropdown-toggle" type="button" id="virtuohm-apps" data-toggle="dropdown">
+          <span class="glyphicon glyphicon-th"></span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="virtuohm-apps" style="right: 0; left: auto;">
+  <li><a href="https://virtuohm.ohmportal.de/pls/exammarks/student.show_noten?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K">Notenauskunft aktuelles Semester</a></li>
+  <li><a href="https://virtuohm.ohmportal.de/pls/chaos/oes_admin.enterchaos?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K">Einschreibung zu Lehrveranstaltungen</a></li>
+  <li><a href="https://virtuohm.ohmportal.de/pls/praktikanten/pdb_overview.redirect?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K">Praxisstellendatenbank</a></li>
+  <li><a href="https://virtuohm.ohmportal.de/pls/apex/f?p=125:1:" target="_blank">Online-Service für Eingabe des KFZ-Kennzeichens </a></li>
+  <li class="selected"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.virtuohm?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K#">VirtuOhm Einstiegsseite</a></li>
+  <li><a href="https://virtuohm.ohmportal.de/pls/corona/cov.kd?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K">Kontaktdatenerfassung COVID-19</a></li>
+  </ul></div> 
   <div class="navbar-header">
+  <button class="navbar-toggle" data-target="#virtuohm-navbar" data-toggle="collapse" type="button">
+                <span class="glyphicon glyphicon-align-justify"></span>
+             </button>
   <p class="navbar-text col-xs-9 col-sm-5">VirtuOhm</p></div>
+  <div class="navbar-collapse collapse" id="virtuohm-navbar">
+            <ul class="nav navbar-nav navbar-right">
+  <li><a href="https://virtuohm.ohmportal.de/pls/vmc/vohm_web.faq?in_instance_id=46&amp;in_role_id=4&amp;in_page_id=1" target="_blank" id="faqPopup" class="popupLink"><span class="glyphicon glyphicon-question-sign"></span> fragen</a></li>
+  <li><a href="https://virtuohm.ohmportal.de/pls/vmc/vohm_web.info?in_instance_id=46&amp;in_role_id=4&amp;in_page_id=1" target="_blank" id="infoPopup" class="popupLink"><span class="glyphicon glyphicon-info-sign"></span> info</a></li>
+  <li><a href="javascript:window.print();"><span class="glyphicon glyphicon-print"></span> drucken</a></li>
+  <li><a href="https://virtuohm.ohmportal.de/pls/portal/portal.abmelden"><span class="glyphicon glyphicon-log-out"></span> abmelden</a></li>
+  </ul></div>
   </nav>
       <div class="container content-ohm">
   <noscript>
               <div class="alert-ohm alert-ohm-bg-classes alert"><div class="alert-danger">
               <span><strong>Achtung: </strong>JavaScript ist deaktiviert. <strong><a class="text-danger" href="http://enable-javascript.com/de/" target="_blank">Bitte aktivieren Sie JavaScript</a></strong>.</span>
               </div></div></noscript>
+  <div class="jumbotron-ohm jumbotron"><div class="container"><div classs="row">
+  <h4>Willkommen Frau Veronika Sedlackova<small> - Ihr letzter Login war am 31.03.2021 10:57:50</small></h4>
+  <div class="modal fade" id="uploadImgModal" tabindex="-1" role="dialog" aria-labelledby="uploadImgModalLabel" aria-hidden="true"></div>
+  <div class="modal fade" id="deleteImgModal" tabindex="-1" role="dialog" aria-labelledby="deleteImgModalLabel" aria-hidden="true"></div>
+  <div id="imgModalSuccess">
+  <div class="col-xs-12 col-sm-4 col-md-2"><div class="profilePhoto">
+  <img class="img-thumbnail" src="./VirtuOhm_neu_files/portal_image.custom_image_display" alt="profile pic">
+  </div>
+  <div class="caption"><span><small>OHMcard-Bild</small></span></div>
+  </div>
+  </div>
+  <div class="modal fade 
+  " id="OHMcardInformationModal" tabindex="-1" role="dialog" aria-labelledby="OHMcardInformationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove hidden-print"></span><span class="sr-only">Schließen</span></button>
+          <h4 class="modal-title" id="OHMcardInformationModalLabel">OHMcard Information</h4>
+        </div>
+        
+        <div class="modal-body">
+  <div class="alert-ohm alert-ohm-bg-classes alert"><div class="bg-warning">Bitte beachten: Der Text auf Ihrer OHMcard kann eventuell abweichen. Der hier dargestellte Text entspricht der Zeile bei einer Validierung zum aktuellen Zeitpunkt.</div></div>
+  <div class="col-xs-12 col-sm-8 col-md-12">
+  <dt>Gültigkeitszeile auf Ihrer OHMcard</dt><dd>gültig vom 01.10.2020 bis 30.09.2021</dd>
+  <dt>Datum der letzten Validierung</dt><dd>11.03.2020 12:13</dd>
+  </div>
+  <div class="modal-footer"></div></div></div></div>
+  </div>
+  <div class="col-xs-12 col-sm-8 col-md-6"><dl class="dl-horizontal">
+  <dt>E-Mail-Adresse</dt><dd>sedlackovave68356@th-nuernberg.de</dd>
+  <dt>Matrikelnummer</dt><dd>3004513</dd>
+  <dt>Studiengang</dt><dd>IN7 - Informatik - Bachelor - SPO 2007 (ganz neu)</dd>
+  <dt>OHMcard</dt><dd><div>Unser OHMcard-System wird einer Wartung unterzogen. Die Selfservice Funktionalitäten stehen Ihnen ab dem 13.04.2021 wieder zur Verfügung.<br>Auch die Validierer vor Ort sind erst ab dem 13.04.2021 wieder nutzbar.</div></dd>
+  </dl></div>
+  <div class="col-xs-12 col-sm-6 col-md-4"><div class="panel panel-default">
+  <div class="panel-heading">Downloads</div>
+  <ul class="list-group">
+  <li class="list-group-item">
+  <a href="https://virtuohm.ohmportal.de/pls/papi/papihelp.catalogue?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K" target="_blank" id="fachkatalogPopup" class="popupLink">Fächerkatalog auswählen</a>
+  </li>
+  <li class="list-group-item">
+  <a href="https://virtuohm.ohmportal.de/pls/study_certificate/sc_web.show_tor?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K" target="_blank" id="study_certificate-torPopup" class="popupLink">Notenübersicht gesamter Studienverlauf</a>
+  <div class="infoButton">
+                                <a href="https://virtuohm.ohmportal.de/pls/portal/portal.virtuohm?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K#" class="popover-details" data-toggle="popover" data-content="Bitte beachten Sie, dass Noten erst dann in dieser Sicht erscheinen, wenn diese vom Studienbüro übernommen wurden."></a>
+                               </div>
+  </li>
+  <li class="list-group-item">
+  <span class="inaktive">Studienbescheinigungen</span>
+  <div class="infoButton">
+                                <a href="https://virtuohm.ohmportal.de/pls/portal/portal.virtuohm?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K#" class="popover-details" data-toggle="popover" data-content="Die Studienbescheinigungen finden Sie ab sofort ausschließlich unter https://studium.ohmportal.de -&gt; Mein Studium -&gt; Bescheinigungen"></a>
+                               </div>
+  </li>
+  <li class="list-group-item">
+  <span class="inaktive">Immatrikulationsbescheinigung nach §9 BAföG</span>
+  <div class="infoButton">
+                                <a href="https://virtuohm.ohmportal.de/pls/portal/portal.virtuohm?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K#" class="popover-details" data-toggle="popover" data-content="Die Studienbescheinigungen finden Sie ab sofort ausschließlich unter https://studium.ohmportal.de -&gt; Mein Studium -&gt; Bescheinigungen"></a>
+                               </div>
+  </li>
+  </ul></div></div>
+  </div></div></div>
   <div id="container"><div class="row">
-  <div class="col-xs-12 col-md-6">
-  <form onkeydown="if(event.keyCode == 13){self.document.defaultForm.submit();}" class="form-ohm form-horizontal form-ohm-login bv-form" target="_self" "="" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" name="defaultForm" method="post" action="https://virtuohm.ohmportal.de/pls/portal/portal.authorisation" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
-  <input type="hidden" name="in_instid" value="">
-  <input type="hidden" name="w" value="">
-  <h4>Anmeldung zu VirtuOhm</h4>
-  <div class="form-group has-feedback"><label class="col-md-4 control-label">
-  Benutzer:
-  </label>
-  <div class="col-md-8">
-  <input name="in_username" type="text" class="form-control
-  " onenter="submit;" data-bv-regexp-message="Bitte geben Sie Ihren Benutzernamen ein, nicht Ihre E-Mail-Adresse.&lt;br&gt;Bsp.Erika Mustermann: mustermanner oder mustermanner12345" pattern="^[a-zA-Z0-9]{1,}$" placeholder="Benutzername" data-bv-field="in_username"><i class="form-control-feedback" data-bv-icon-for="in_username" style="display: none;"></i>
-  <small class="help-block" data-bv-validator="regexp" data-bv-for="in_username" data-bv-result="NOT_VALIDATED" style="display: none;">Bitte geben Sie Ihren Benutzernamen ein, nicht Ihre E-Mail-Adresse.<br>Bsp.Erika Mustermann: mustermanner oder mustermanner12345</small></div>
-  </div>
-  <div class="form-group"><label class="col-md-4 control-label">
-  Passwort:
-  </label>
-  <div class="col-md-8">
-  <input name="in_password" type="password" class="form-control
-  " onenter="submit;" placeholder="Passwort">
-  </div>
-  </div>
-  <input type="submit" value="Anmelden" name="submit_button" data-loading-text="laden..." class="ohm-load-button btn-ohm btn btn-sm btn-ohm-right  hidden-print" role="button">
-  </form>
-  <div class="alert-ohm alert-ohm-bg-classes alert"><div class="text-info">Bitte beachten, Sie müssen Cookies aktiviert haben um weitergehen zu können.</div></div>
-  </div>
-<div class="col-xs-12 col-md-6">
+  <div class="col-xs-12 col-md-12">
+  <div class="col-xs-12 col-md-6"><div class="list-group">
+  <a href="https://virtuohm.ohmportal.de/pls/exammarks/student.show_noten?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K" class="list-group-item virtuohm-item enabled">
+  <h4 class="list-group-item-heading">Notenauskunft aktuelles Semester</h4>
+  <p class="list-group-item-text">Hier können Sie Ihre Noten aus dem aktuellen Semester einsehen.</p>
+  </a><br>
+  <a href="https://virtuohm.ohmportal.de/pls/chaos/oes_admin.enterchaos?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K" class="list-group-item virtuohm-item enabled">
+  <h4 class="list-group-item-heading">Einschreibung zu Lehrveranstaltungen</h4>
+  <p class="list-group-item-text">Hier können Sie sich zu Lehrveranstaltungen der Technischen Hochschule Nürnberg Georg Simon Ohm einschreiben.</p>
+  </a><br>
 
-  <!-- Verifable Credentials Container -->
-  <div class="panel panel-default">
-    <div class="panel-heading">Erhalte ein Verifiable Credentials</div>
-    <div class="container">
-      <div class="card-panel">
-        <a class="waves-effect waves-light btn" id="receiveButton">Receive a Credential</a>
-      </div>
-    
-      <div class="card-panel hide" id="resultsPanel">
-        <h6>Result of store() operation:</h6>
-    
-        <code id="storeResults"></code>
-      </div>
-    </div>
-    </li>
-    </ul>
-  </div>
 
-  <div class="panel panel-default">
-  <div class="panel-heading">Exams ( Prüfungssystem )</div>
-  <ul class="list-group">
-  <li class="list-group-item">
-  <a href="https://exams.ohmportal.de/" target="_blank">Hier gelangen Sie zu Exams</a>
-  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Hier finden Sie unser digitales Prüfungssystem"></a></div>
-  </li>
-  </ul></div>
-  <div class="panel panel-default">
-  <div class="panel-heading">StudyOhm ( Neues Campus-Managementsystem )</div>
-  <ul class="list-group">
-  <li class="list-group-item">
-  <a href="https://studium.ohmportal.de/" target="_blank">Hier gelangen Sie zu StudyOhm</a>
-  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Dort finden Sie: Rückmeldung, Bezahlung des Studentenwerksbeitrags, Einsehen bzw. Download von Bescheinigungen, Ändern von Kontaktdaten"></a></div>
-  </li>
-  </ul></div>
-  <div class="panel panel-default">
-  <div class="panel-heading">Nachrichten aus dem Rechenzentrum</div>
-  <ul class="list-group">
-  <li class="list-group-item">
-  <a href="https://intern.ohmportal.de/institutionen/rechenzentrum/serviceverfuegbarkeit/page.html" target="_blank">Aktuelles: Serviceverfügbarkeiten</a>
-  </li>
-  </ul></div>
-  <div class="panel panel-default">
-  <div class="panel-heading">Anwendungen für externe Besucher</div>
-  <ul class="list-group">
-  <li class="list-group-item">
-  <a href="https://virtuohm.ohmportal.de/pls/praktikanten/pdb_admin.startpage" target="_blank">Praxisstellendatenbank</a>
-  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Anmeldung und Registrierung Praxisstellendatenbank der Fakultät Sozialwissenschaften"></a></div>
-  </li>
-  <li class="list-group-item">
-  <a href="https://virtuohm.ohmportal.de/pls/praktikanten/pdb_projekten.startpage" target="_blank">Projektdatenbank</a>
-  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Anmeldung und Registrierung Projektdatenbank der Fakultät Sozialwissenschaften"></a></div>
-  </li>
-  <li class="list-group-item">
-  <a href="https://virtuohm.ohmportal.de/pls/chaos/oes_web.show_anmeldung?in_type=extern" target="_blank">Online-Einschreibung zu Lehrveranstaltungen für Externe</a>
-  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Anmeldung und Registrierung Online Einschreibung zu Lehrveranstaltungen des Language Centers, zu Brückenkursen und Angeboten des Career Service"></a></div>
-  </li>
-  <li class="list-group-item">
-  <a href="https://studium.ohmportal.de/" target="_blank">Studienbewerbung</a>
-  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Anmeldung und Registrierung Studienbewerbungsportal"></a></div>
-  </li>
-  </ul></div>
+  <a class="list-group-item virtuohm-item enabled">
+  <h4 class="list-group-item-heading"id="receiveButton">Verifiable Credential</h4>
+  <p class="list-group-item-text">Erhalte ein Credentials das Student hier bist</p>
+  </a><br>
+
+  </div></div>
+  <div class="col-xs-12 col-md-6"><div class="list-group">
+  <a href="https://virtuohm.ohmportal.de/pls/praktikanten/pdb_overview.redirect?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K" class="list-group-item virtuohm-item enabled">
+  <h4 class="list-group-item-heading">Praxisstellendatenbank</h4>
+  <p class="list-group-item-text">Hier finden Sie fakultätspezifische Praxisstellenangebote.</p>
+  </a><br>
+  <a href="https://virtuohm.ohmportal.de/pls/apex/f?p=125:1:" target="_blank" class="list-group-item virtuohm-item enabled">
+  <h4 class="list-group-item-heading">Online-Service für Eingabe des KFZ-Kennzeichens </h4>
+  <p class="list-group-item-text">Hier können Sie Ihr KFZ-Kennzeichen für die Benutzung des Parkhauses in der Bahnhofstraße registrieren.</p>
+  </a><br>
+  <a href="https://virtuohm.ohmportal.de/pls/corona/cov.kd?in_crimmo=ASAO0N9WYIY4Q83UCYPHP3FCFJ50C75K" class="list-group-item virtuohm-item enabled">
+  <h4 class="list-group-item-heading">Kontaktdatenerfassung COVID-19</h4>
+  <p class="list-group-item-text">Hier können Sie Ihre Aufenthalte an der Hochschule eingeben für die Kontaktdatenerfassung.</p>
+  </a><br>
+  </div></div>
   </div></div></div></div>
   <div class="footer-ohm col-md-12 hidden-print" role="contentinfo">
   <div class="container">
@@ -129,9 +154,18 @@
         <br>Bitte beachten Sie die <a href="https://th-nuernberg.de/datenschutz" target="_blank">Datenschutzerklärung</a> der Technischen Hochschule Nürnberg.</div>
                    </div>
                    </div>
-  <!-- End skript von Ohm-->
 
+<div class="container">
+  <div class="card-panel">
+    <a class="waves-effect waves-light btn" id="receiveButton">Receive a Credential</a>
+  </div>
 
+  <div class="card-panel hide" id="resultsPanel">
+    <h6>Result of store() operation:</h6>
+
+    <code id="storeResults"></code>
+  </div>
+</div>
 <script>
   const testCredential = {
     "@context": [
