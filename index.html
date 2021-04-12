@@ -1,37 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Minimal Demo Issuer</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <!-- Compiled and minified Materialize JS/CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>VirtuOhm Anmeldung</title>
+  <meta http-equiv="Expires" name="" content="0">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="jquery-bootstrap-combined.css" rel="stylesheet">
+  <link href="ohm.css" rel="stylesheet">
+
+  <meta charset="utf-8">
 
   <!--Credential Handler API Polyfill-->
   <script src="https://unpkg.com/credential-handler-polyfill@2.1.3/dist/credential-handler-polyfill.min.js"></script>
 </head>
-<body>
+  <!-- Start skript von Ohm-->
+
+<body onload="document.defaultForm.in_username.focus();">
+  <div class="wrapper-ohm">
+  <div class="header-ohm hidden-print img-responsive"><div class="headertext-ohm"><small>Sie sind nicht angemeldet.</small></div></div>
+  <nav class="navbar navbar-default  navbar-ohm hidden-print" role="navigation">
+  <div class="navbar-header">
+  <p class="navbar-text col-xs-9 col-sm-5">VirtuOhm</p></div>
+  </nav>
+      <div class="container content-ohm">
+  <noscript>
+              <div class="alert-ohm alert-ohm-bg-classes alert"><div class="alert-danger">
+              <span><strong>Achtung: </strong>JavaScript ist deaktiviert. <strong><a class="text-danger" href="http://enable-javascript.com/de/" target="_blank">Bitte aktivieren Sie JavaScript</a></strong>.</span>
+              </div></div></noscript>
+  <div id="container"><div class="row">
+  <div class="col-xs-12 col-md-6">
+  <form onkeydown="if(event.keyCode == 13){self.document.defaultForm.submit();}" class="form-ohm form-horizontal form-ohm-login bv-form" target="_self" "="" data-bv-message="This value is not valid" data-bv-feedbackicons-valid="glyphicon glyphicon-ok" data-bv-feedbackicons-invalid="glyphicon glyphicon-remove" data-bv-feedbackicons-validating="glyphicon glyphicon-refresh" name="defaultForm" method="post" action="https://virtuohm.ohmportal.de/pls/portal/portal.authorisation" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+  <input type="hidden" name="in_instid" value="">
+  <input type="hidden" name="w" value="">
+  <h4>Anmeldung zu VirtuOhm</h4>
+  <div class="form-group has-feedback"><label class="col-md-4 control-label">
+  Benutzer:
+  </label>
+  <div class="col-md-8">
+  <input name="in_username" type="text" class="form-control
+  " onenter="submit;" data-bv-regexp-message="Bitte geben Sie Ihren Benutzernamen ein, nicht Ihre E-Mail-Adresse.&lt;br&gt;Bsp.Erika Mustermann: mustermanner oder mustermanner12345" pattern="^[a-zA-Z0-9]{1,}$" placeholder="Benutzername" data-bv-field="in_username"><i class="form-control-feedback" data-bv-icon-for="in_username" style="display: none;"></i>
+  <small class="help-block" data-bv-validator="regexp" data-bv-for="in_username" data-bv-result="NOT_VALIDATED" style="display: none;">Bitte geben Sie Ihren Benutzernamen ein, nicht Ihre E-Mail-Adresse.<br>Bsp.Erika Mustermann: mustermanner oder mustermanner12345</small></div>
+  </div>
+  <div class="form-group"><label class="col-md-4 control-label">
+  Passwort:
+  </label>
+  <div class="col-md-8">
+  <input name="in_password" type="password" class="form-control
+  " onenter="submit;" placeholder="Passwort">
+  </div>
+  </div>
+  <input type="submit" value="Anmelden" name="submit_button" data-loading-text="laden..." class="ohm-load-button btn-ohm btn btn-sm btn-ohm-right  hidden-print" role="button">
+  </form>
+  <div class="alert-ohm alert-ohm-bg-classes alert"><div class="text-info">Bitte beachten, Sie müssen Cookies aktiviert haben um weitergehen zu können.</div></div>
+  </div>
+  <div class="col-xs-12 col-md-6">
+  <div class="panel panel-default">
+  <div class="panel-heading">Exams ( Prüfungssystem )</div>
+  <ul class="list-group">
+  <li class="list-group-item">
+  <a href="https://exams.ohmportal.de/" target="_blank">Hier gelangen Sie zu Exams</a>
+  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Hier finden Sie unser digitales Prüfungssystem"></a></div>
+  </li>
+  </ul></div>
+  <div class="panel panel-default">
+  <div class="panel-heading">StudyOhm ( Neues Campus-Managementsystem )</div>
+  <ul class="list-group">
+  <li class="list-group-item">
+  <a href="https://studium.ohmportal.de/" target="_blank">Hier gelangen Sie zu StudyOhm</a>
+  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Dort finden Sie: Rückmeldung, Bezahlung des Studentenwerksbeitrags, Einsehen bzw. Download von Bescheinigungen, Ändern von Kontaktdaten"></a></div>
+  </li>
+  </ul></div>
+  <div class="panel panel-default">
+  <div class="panel-heading">Nachrichten aus dem Rechenzentrum</div>
+  <ul class="list-group">
+  <li class="list-group-item">
+  <a href="https://intern.ohmportal.de/institutionen/rechenzentrum/serviceverfuegbarkeit/page.html" target="_blank">Aktuelles: Serviceverfügbarkeiten</a>
+  </li>
+  </ul></div>
+  <div class="panel panel-default">
+  <div class="panel-heading">Anwendungen für externe Besucher</div>
+  <ul class="list-group">
+  <li class="list-group-item">
+  <a href="https://virtuohm.ohmportal.de/pls/praktikanten/pdb_admin.startpage" target="_blank">Praxisstellendatenbank</a>
+  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Anmeldung und Registrierung Praxisstellendatenbank der Fakultät Sozialwissenschaften"></a></div>
+  </li>
+  <li class="list-group-item">
+  <a href="https://virtuohm.ohmportal.de/pls/praktikanten/pdb_projekten.startpage" target="_blank">Projektdatenbank</a>
+  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Anmeldung und Registrierung Projektdatenbank der Fakultät Sozialwissenschaften"></a></div>
+  </li>
+  <li class="list-group-item">
+  <a href="https://virtuohm.ohmportal.de/pls/chaos/oes_web.show_anmeldung?in_type=extern" target="_blank">Online-Einschreibung zu Lehrveranstaltungen für Externe</a>
+  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Anmeldung und Registrierung Online Einschreibung zu Lehrveranstaltungen des Language Centers, zu Brückenkursen und Angeboten des Career Service"></a></div>
+  </li>
+  <li class="list-group-item">
+  <a href="https://studium.ohmportal.de/" target="_blank">Studienbewerbung</a>
+  <div class="infoButton"><a href="https://virtuohm.ohmportal.de/pls/portal/portal.anmelden#" class="popover-details" data-toggle="popover" data-content="Anmeldung und Registrierung Studienbewerbungsportal"></a></div>
+  </li>
+  </ul></div>
+  </div></div></div></div>
+  <div class="footer-ohm col-md-12 hidden-print" role="contentinfo">
+  <div class="container">
+            <ul class="nav nav-justified">
+  <li><a href="https://www.th-nuernberg.de/studierendenservice" target="_blank">Studierendenservice</a></li>
+  <li><a href="https://www.th-nuernberg.de/rechenzentrum" target="_blank">Rechenzentrum</a></li>
+  </ul></div>
+   <div class="container">2015, VirtuOhm™-Team, Technische Hochschule Nürnberg. Bei technischen Problemen und Fragen erreichen Sie uns unter <a href="mailto:virtuohm@th-nuernberg.de">VirtuOhm</a>.
+        <br>Bitte beachten Sie die <a href="https://th-nuernberg.de/datenschutz" target="_blank">Datenschutzerklärung</a> der Technischen Hochschule Nürnberg.</div>
+                   </div>
+                   </div>
+  <!-- End skript von Ohm-->
 
 <div class="container">
   <div class="card-panel">
-    <h5>Credential Handler API (CHAPI) Demo Issuer</h5>
     <p><a href="https://github.com/digitalbazaar/credential-handler-polyfill">Read more about CHAPI</a></p>
     <p>
-      If you have not yet picked a wallet and registered it with your browser,
-      try out the
       <a href="https://chapi-demo-wallet.digitalbazaar.com/">Demo Wallet</a>.
-    </p>
-
-    <p>This is a minimal credential Issuer application that demonstrates
-      how a user would ask for a credential to be issued
-      (using CHAPI's <code>store()</code> under the hood).
-    </p>
-
-    <p>When you click the Receive button, a Verifiable Credential will
-      be issued and sent to your digital wallet for storage.
     </p>
 
     <a class="waves-effect waves-light btn" id="receiveButton">Receive a Credential</a>
