@@ -55,7 +55,26 @@
   </form>
   <div class="alert-ohm alert-ohm-bg-classes alert"><div class="text-info">Bitte beachten, Sie müssen Cookies aktiviert haben um weitergehen zu können.</div></div>
   </div>
-  <div class="col-xs-12 col-md-6">
+<div class="col-xs-12 col-md-6">
+
+  <!-- Verifable Credentials Container -->
+  <div class="panel panel-default">
+    <div class="panel-heading">Erhalte ein Verifiable Credentials</div>
+    <div class="container">
+      <div class="card-panel">
+        <a class="waves-effect waves-light btn" id="receiveButton">Receive a Credential</a>
+      </div>
+    
+      <div class="card-panel hide" id="resultsPanel">
+        <h6>Result of store() operation:</h6>
+    
+        <code id="storeResults"></code>
+      </div>
+    </div>
+    </li>
+    </ul>
+  </div>
+
   <div class="panel panel-default">
   <div class="panel-heading">Exams ( Prüfungssystem )</div>
   <ul class="list-group">
@@ -112,22 +131,7 @@
                    </div>
   <!-- End skript von Ohm-->
 
-<div class="container">
-  <div class="card-panel">
-    <p><a href="https://github.com/digitalbazaar/credential-handler-polyfill">Read more about CHAPI</a></p>
-    <p>
-      <a href="https://chapi-demo-wallet.digitalbazaar.com/">Demo Wallet</a>.
-    </p>
 
-    <a class="waves-effect waves-light btn" id="receiveButton">Receive a Credential</a>
-  </div>
-
-  <div class="card-panel hide" id="resultsPanel">
-    <h6>Result of store() operation:</h6>
-
-    <code id="storeResults"></code>
-  </div>
-</div>
 <script>
   const testCredential = {
     "@context": [
