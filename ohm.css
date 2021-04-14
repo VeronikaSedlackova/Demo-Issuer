@@ -719,12 +719,14 @@ h4.media-heading {
 }
 
 a.virtuohm-item:hover {
-    color: #ff8f00
+    color: #ff8f00;
+    cursor: pointer;
 }
 
 a.virtuohm-item .list-group-item-heading {
     color: inherit
 }
+
 
 .modallink {
     height: 100%;
