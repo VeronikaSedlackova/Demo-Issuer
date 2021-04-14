@@ -36,8 +36,6 @@ html, body {
     position: relative
 }
 
-.bs-wizard>.bs-wizard-step+.bs-wizard-step {}
-
 .bs-wizard>.bs-wizard-step .bs-wizard-stepnum {
     color: #666;
     font-size: 16px;
@@ -197,7 +195,6 @@ html, body {
 
 .popover {
     max-width: 25%;
-    / / Max Width of the popover (depending on the container!)
 }
 
 .header-ohm {

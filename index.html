@@ -151,10 +151,6 @@
                    </div>
 
 <div class="container">
-  <div class="card-panel">
-    <a class="waves-effect waves-light btn" id="receiveButton">Receive a Credential</a>
-  </div>
-
   <div class="card-panel hide" id="resultsPanel">
     <h6>Result of store() operation:</h6>
 
@@ -174,8 +170,8 @@
         "https://www.w3.org/2018/credentials/examples/v1"
       ],
       "id": "http://example.edu/credentials/1872",
-      "type": ["VerifiableCredential", "UniversityDegreeCredential"],
-      "issuer": "https://example.edu/issuers/565049",
+      "type": ["VerifiableCredential", "UniversityCredential"],
+      "issuer": "did:example:university",
       "issuanceDate": "2010-01-01T19:73:24Z",
       "credentialSubject": {
         "id": "did:example:ebfeb1f712ebc6f1c276e12ec21",
@@ -192,9 +188,15 @@
         "created": "2017-06-18T21:19:10Z",
         "proofPurpose": "assertionMethod",
         "verificationMethod": "https://example.edu/issuers/keys/1",
-        "jws": "eyJhbGciOiJSUzI1NiIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..TCYt5XsITJX1CxPCT8yAV-TVkIEq_PbChOMqsLfRoPsnsgw5WEuts01mq-pQy7UJiN5mgRxD-WUcX16dUEMGlv50aqzpqh4Qktb3rk-BuQy72IFLOqV0G_zS245-kronKb78cPN25DGlcTwLtjPAYuNzVBAh4vGHSrQyHUdBBPM"
+        "jws": "eyJhbGciOiJSUziYjY0Il19..TCYt5XsITJX1CxPCT8zS245-krQyHUdBBPM"
       }
-    }]
+    }],
+    "proof": {
+        "type": "RsaSignature2018",
+        "created": "2021-05-01T17:19:10Z",
+        "verificationMethod": "did:example:alice",
+        "jws": "FJNKwjkned34fcwe..wemajDJnjkLDAEDNJ34"
+      }
   };
   // ^ Note that:
   // 1. The Verifiable Credential is signed, and wrapped in a VerifiablePresentation.
@@ -204,7 +206,7 @@
     // document.getElementById('storeResults').innerHTML = ''; // clear results
 
     // Construct the WebCredential wrapper around the credential to be stored
-    const credentialType = 'VerifiablePresentation';
+    const credentialType = 'VerifiableCredential';
     const webCredentialWrapper = new WebCredential(credentialType, testCredential);
 
     document.getElementById('storeResults').innerText = 'Storing credential...';
@@ -215,14 +217,7 @@
     document.getElementById('resultsPanel').classList.remove('hide');
     document.getElementById('storeResults').innerText = JSON.stringify(result, null, 2);
 
-    console.log('Result of receiving via store() request:', result);
-    //
-    // if(!result) {
-    //   document.getElementById('storeResults').innerHTML = 'null result';
-    //   return;
-    // }
-
-    // document.getElementById('storeResults').innerHTML = JSON.stringify(result.data, null, 2);
+    console.log('Result of receiving vc:', result);
   }
 
   function ready(fn) {
