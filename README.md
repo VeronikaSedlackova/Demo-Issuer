@@ -2,7 +2,7 @@
 
 ## Original Project
 
-This project is based on this repository: [Demo Issuer](https://chapi-demo-issuer.digitalbazaar.com/)
+This project is based on this repository: [Demo Issuer](https://github.com/digitalbazaar/chapi-demo-issuer)
 
 ## Background
 
