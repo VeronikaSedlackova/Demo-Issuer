@@ -8,9 +8,9 @@ This project is based on this repository: [Demo Issuer](https://chapi-demo-issue
 
 It represents one part of an example Verifiable Credentials Flow:
 
-1. An example TH Nuernberg page(issuer, this project)
+1. An example university (issuer, this project)
 2. [Digital Wallet](https://github.com/VeronikaSedlackova/Demo-Wallet) 
-3. [An example Thalia page](https://github.com/VeronikaSedlackova/Demo-Verifier) (verifier)
+3. [An example bookshop](https://github.com/VeronikaSedlackova/Demo-Verifier) (verifier)
 
 
 ## Local Development
