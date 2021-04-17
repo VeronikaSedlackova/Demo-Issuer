@@ -1,6 +1,6 @@
 # Credential Handler API Demo Issuer
 
-## Original Project:
+## Original Project
 
 This project is based on this repository: [Demo Issuer](https://chapi-demo-issuer.digitalbazaar.com/)
 
