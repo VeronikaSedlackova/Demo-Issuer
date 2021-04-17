@@ -1029,16 +1029,13 @@ td.e_disabled {
     margin: 0;
     padding: 5px 20px 20px 10px;
     border: 0;
-    background: url(img/button_info_up.png) no-repeat right
 }
 
 .fieldInfo a:hover {
-    background-image: url(img/button_info_over.png);
     text-decoration: none
 }
 
 .fieldInfo a:active {
-    background-image: url(img/button_info_down.png)
 }
 
 .infoButton {
@@ -1057,16 +1054,13 @@ td.e_disabled {
     margin: 0;
     padding: 5px 20px 20px 10px;
     border: 0;
-    background: url(img/button_info_up.png) no-repeat right
 }
 
 .infoButton a:hover {
-    background-image: url(img/button_info_over.png);
     text-decoration: none
 }
 
 .infoButton a:active {
-    background-image: url(img/button_info_down.png)
 }
 
 .disablelink {
