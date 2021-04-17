@@ -2,11 +2,11 @@
 
 ## Original Project:
 
-This project is based on this repositories: [Demo Issuer](https://chapi-demo-issuer.digitalbazaar.com/)
+This project is based on this repository: [Demo Issuer](https://chapi-demo-issuer.digitalbazaar.com/)
 
 ## Background
 
-This project represents one part of an example Verifiable Credentials Flow:
+It represents one part of an example Verifiable Credentials Flow:
 
 1. An example TH Nuernberg page(issuer, this project)
 2. [Digital Wallet](https://github.com/VeronikaSedlackova/Demo-Wallet) 
