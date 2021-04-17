@@ -17,7 +17,7 @@ It represents one part of an example Verifiable Credentials Flow:
 
 1. Run `npm install`
 2. Run `npm start`
-3. Visit `https://127.0.0.1:8083` oder `https://192.168.178.23:8083` 
+3. Visit `https://127.0.0.1:8083` or `https://192.168.178.23:8083` 
 
 
 ## License
