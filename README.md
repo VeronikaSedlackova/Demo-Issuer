@@ -6,7 +6,7 @@ This project is based on this repository: [Demo Issuer](https://github.com/digit
 
 ## Background
 
-It represents one part of an example Verifiable Credentials Flow:
+It represents one part of an example Verifiable Credentials flow:
 
 1. An example university (issuer, this project)
 2. [Digital Wallet](https://github.com/VeronikaSedlackova/Demo-Wallet) 
@@ -17,7 +17,7 @@ It represents one part of an example Verifiable Credentials Flow:
 
 1. Run `npm install`
 2. Run `npm start`
-3. Visit `https://127.0.0.1:8083` or `https://192.168.178.23:8083` 
+3. Visit `https://127.0.0.1:8082` or `https://192.168.178.23:8082` 
 
 
 ## License
